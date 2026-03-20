@@ -30,7 +30,9 @@ Sitio web con página principal y formulario de contacto que permite a los usuar
 🌐 https://formulario-lasalle.infinityfreeapp.com
 
 ## Integrantes - Grupo 1:
-- Sergio A. Silva C.
+- Sergio A. Silva Carrero
 - Juliet Marianie Vásquez B.
+
+## Ingeniería de Software - G_01.
 
 Universidad de La Salle — 2026
