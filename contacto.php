@@ -99,15 +99,15 @@
       <label>Nombre:</label>
       <input type="text" name="nombre" placeholder="Tu nombre completo" required>
 
-      <label>Correo electronico:</label>
+      <label>Correo electrónico:</label>
       <input type="email" name="email" placeholder="correo@ejemplo.com" required>
 
-      <label>Telefono:</label>
+      <label>Teléfono:</label>
       <input type="tel" name="telefono" placeholder="Ej: 300 000 0000">
 
       <label>Asunto:</label>
       <select name="asunto">
-        <option value="informacion">Informacion de programas</option>
+        <option value="informacion">Información de programas</option>
         <option value="admisiones">Admisiones</option>
         <option value="otro">Otro</option>
       </select>
