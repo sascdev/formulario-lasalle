@@ -29,7 +29,7 @@ Sitio web con página principal y formulario de contacto que permite a los usuar
 ## Dominio público
 🌐 https://formulario-lasalle.infinityfreeapp.com
 
-## Integrantes
+## Integrantes - Grupo 1:
 - Sergio A. Silva C.
 - Juliet Marianie Vásquez B.
 
