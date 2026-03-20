@@ -1,6 +1,6 @@
 # Formulario de Contacto — Universidad de La Salle
 
-Aplicación web desarrollada como parte de la asignatura de Ingeniería de Software.
+Aplicación web desarrollada como parte de la ACTIVIDAD 4: Taller práctico, ambientes en el desarrollo de producto, para Ingeniería de Software G-01.
 
 ## Descripción
 Sitio web con página principal y formulario de contacto que permite a los usuarios enviar mensajes que quedan guardados en una base de datos MySQL.
