@@ -26,13 +26,22 @@ Sitio web con página principal y formulario de contacto que permite a los usuar
 - **Panel de administración de BD:** phpMyAdmin
 - **Dominio público:** https://formulario-lasalle.infinityfreeapp.com
 
+## Evidencias
+Capturas de pantalla del ambiente de desarrollo y pruebas disponibles en la carpeta [`/evidencias`](./evidencias):
+
+1. XAMPP con Apache corriendo
+2. MySQL Workbench con la tabla contactos y datos guardados
+3. phpMyAdmin de InfinityFree con la base de datos en producción
+4. Página principal de la aplicación
+5. Formulario de contacto
+6. Confirmación de mensaje enviado correctamente
+
 ## Dominio público
 🌐 https://formulario-lasalle.infinityfreeapp.com
 
-## Integrantes - Grupo 1:
+## Integrantes - Grupo 1
 - Sergio A. Silva Carrero
 - Juliet Marianie Vásquez B.
 
-## Ingeniería de Software - G_01.
-
+## Ingeniería de Software - G_01
 Universidad de La Salle — 2026
