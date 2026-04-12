@@ -16,10 +16,10 @@ Sitio web con página principal y formulario de contacto que permite a los usuar
 - `procesar.php` — Procesamiento y guardado en base de datos
 
 ## Repositorio en GitHub
-Código fuente y historial de cambios: [github.com/Marianie13/formulario-lasalle-main](https://github.com/Marianie13/formulario-lasalle-main)
+Código fuente y historial de cambios: [github.com/sascdev/formulario-lasalle](https://github.com/sascdev/formulario-lasalle)
 
 ### Uso básico de Git en este proyecto
-1. Clonar: `git clone https://github.com/Marianie13/formulario-lasalle-main.git`
+1. Clonar: `git clone https://github.com/sascdev/formulario-lasalle.git`
 2. Ver estado: `git status`
 3. Guardar cambios: `git add .` → `git commit -m "descripción clara del cambio"` → `git push`
 

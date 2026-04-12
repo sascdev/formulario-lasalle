@@ -97,6 +97,7 @@
     <!-- el formulario envia los datos a procesar.php -->
     <form action="procesar.php" method="POST">
 
+<<<<<<< HEAD
       <label for="nombre">Nombre:</label>
       <input id="nombre" type="text" name="nombre" placeholder="Tu nombre completo" required>
 
@@ -108,6 +109,19 @@
 
       <label for="asunto">Asunto:</label>
       <select id="asunto" name="asunto">
+=======
+      <label>Nombre:</label>
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+
+      <label>Correo electrónico:</label>
+      <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+
+      <label>Teléfono:</label>
+      <input type="tel" name="telefono" placeholder="Ej: 300 000 0000">
+
+      <label>Asunto:</label>
+      <select name="asunto">
+>>>>>>> equipo/main
         <option value="informacion">Información de programas</option>
         <option value="admisiones">Admisiones</option>
         <option value="otro">Otro</option>
