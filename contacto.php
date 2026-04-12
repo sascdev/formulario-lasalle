@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Formulario de Contacto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario de Contacto — Universidad de La Salle</title>
   <!-- estilos del formulario -->
   <style>
     body {
@@ -96,24 +97,24 @@
     <!-- el formulario envia los datos a procesar.php -->
     <form action="procesar.php" method="POST">
 
-      <label>Nombre:</label>
-      <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text" name="nombre" placeholder="Tu nombre completo" required>
 
-      <label>Correo electrónico:</label>
-      <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+      <label for="email">Correo electrónico:</label>
+      <input id="email" type="email" name="email" placeholder="correo@ejemplo.com" required>
 
-      <label>Teléfono:</label>
-      <input type="tel" name="telefono" placeholder="Ej: 300 000 0000">
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" type="tel" name="telefono" placeholder="Ej: 300 000 0000">
 
-      <label>Asunto:</label>
-      <select name="asunto">
+      <label for="asunto">Asunto:</label>
+      <select id="asunto" name="asunto">
         <option value="informacion">Información de programas</option>
         <option value="admisiones">Admisiones</option>
         <option value="otro">Otro</option>
       </select>
 
-      <label>Mensaje:</label>
-      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
 
       <button type="submit">Enviar</button>
 
