@@ -1,10 +1,10 @@
 <?php
 // recibimos los datos que vienen del formulario
-$nombre   = $_POST['nombre'];
-$email    = $_POST['email'];
-$telefono = $_POST['telefono'];
-$asunto   = $_POST['asunto'];
-$mensaje  = $_POST['mensaje'];
+$nombre   = isset($_POST['nombre']) ? trim($_POST['nombre']) : '';
+$email    = isset($_POST['email']) ? trim($_POST['email']) : '';
+$telefono = isset($_POST['telefono']) ? trim($_POST['telefono']) : '';
+$asunto   = isset($_POST['asunto']) ? trim($_POST['asunto']) : '';
+$mensaje  = isset($_POST['mensaje']) ? trim($_POST['mensaje']) : '';
 
 // conectamos a la base de datos que creamos en XAMPP
 $conn = new mysqli("sql113.infinityfree.com", "if0_41434984", "5V7fHvzW1YMKE", "if0_41434984_lasalle");
@@ -13,11 +13,15 @@ if ($conn->connect_error) {
   die("Error de conexión: " . $conn->connect_error);
 }
 
-// guardamos los datos en la tabla contactos
-$sql = "INSERT INTO contactos (nombre, email, telefono, asunto, mensaje) 
-        VALUES ('$nombre', '$email', '$telefono', '$asunto', '$mensaje')";
+$conn->set_charset("utf8mb4");
 
-$resultado = $conn->query($sql);
+// guardamos los datos en la tabla contactos (consulta preparada)
+$stmt = $conn->prepare(
+  "INSERT INTO contactos (nombre, email, telefono, asunto, mensaje) VALUES (?, ?, ?, ?, ?)"
+);
+$stmt->bind_param("sssss", $nombre, $email, $telefono, $asunto, $mensaje);
+$resultado = $stmt->execute();
+$stmt->close();
 $conn->close();
 ?>
 
