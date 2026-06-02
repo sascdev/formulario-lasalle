@@ -4,6 +4,13 @@ Aplicación web desarrollada como parte de la ACTIVIDAD 4: Taller práctico, amb
 ## Descripción
 Sitio web con página principal y formulario de contacto que permite a los usuarios enviar mensajes que quedan guardados en una base de datos MySQL.
 
+## Documentación del proyecto
+
+| Documento | Ver en GitHub |
+|-----------|---------------|
+| **Requerimientos y arquitectura (recomendado)** | [docs/DOCUMENTO-DE-REQUERIMIENTOS.md](./docs/DOCUMENTO-DE-REQUERIMIENTOS.md) |
+| Mismo contenido en PDF | [docs/DOCUMENTO-DE-REQUERIMIENTOS.pdf](./docs/DOCUMENTO-DE-REQUERIMIENTOS.pdf) |
+
 ## Tecnologías utilizadas
 - HTML y CSS
 - PHP
@@ -16,7 +23,8 @@ Sitio web con página principal y formulario de contacto que permite a los usuar
 - `procesar.php` — Procesamiento y guardado en base de datos
 - `config.php` — Configuración de base de datos y contraseña de administración
 - `admin.php` — Panel para ver y eliminar mensajes guardados
-- `docs/DOCUMENTO-DE-REQUERIMIENTOS.pdf` — Documento de requerimientos del sistema
+- `docs/DOCUMENTO-DE-REQUERIMIENTOS.md` — Documento de requerimientos (se visualiza en GitHub)
+- `docs/DOCUMENTO-DE-REQUERIMIENTOS.pdf` — Mismo documento en PDF (descarga)
 
 ## Repositorio en GitHub
 Código fuente y historial de cambios: [github.com/sascdev/formulario-lasalle](https://github.com/sascdev/formulario-lasalle)
