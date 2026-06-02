@@ -61,6 +61,19 @@
       font-size: 0.95em;
     }
 
+    .contador {
+      text-align: right;
+      font-size: 0.85em;
+      color: #555;
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+
+    .contador.limite {
+      color: #b00020;
+      font-weight: bold;
+    }
+
     button {
       background-color: #003087;
       color: white;
@@ -69,6 +82,11 @@
       border-radius: 4px;
       cursor: pointer;
       width: 100%;
+    }
+
+    .btn-secundario {
+      margin-top: 10px;
+      background-color: #6c757d;
     }
 
     .footer {
@@ -89,6 +107,7 @@
   <div class="nav">
     <a href="index.html">Inicio</a>
     <a href="contacto.php">Contacto</a>
+    <a href="admin.php">Administrar mensajes</a>
   </div>
 
   <div class="formulario">
@@ -96,8 +115,6 @@
 
     <!-- el formulario envia los datos a procesar.php -->
     <form action="procesar.php" method="POST">
-
-<<<<<<< HEAD
       <label for="nombre">Nombre:</label>
       <input id="nombre" type="text" name="nombre" placeholder="Tu nombre completo" required>
 
@@ -109,28 +126,17 @@
 
       <label for="asunto">Asunto:</label>
       <select id="asunto" name="asunto">
-=======
-      <label>Nombre:</label>
-      <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-
-      <label>Correo electrónico:</label>
-      <input type="email" name="email" placeholder="correo@ejemplo.com" required>
-
-      <label>Teléfono:</label>
-      <input type="tel" name="telefono" placeholder="Ej: 300 000 0000">
-
-      <label>Asunto:</label>
-      <select name="asunto">
->>>>>>> equipo/main
         <option value="informacion">Información de programas</option>
         <option value="admisiones">Admisiones</option>
         <option value="otro">Otro</option>
       </select>
 
       <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." maxlength="500" required></textarea>
+      <p id="contadorMensaje" class="contador">0 / 500 caracteres</p>
 
       <button type="submit">Enviar</button>
+      <button type="reset" class="btn-secundario">Limpiar formulario</button>
 
     </form>
   </div>
@@ -139,6 +145,21 @@
     <p>Universidad de La Salle - 2026</p>
     <p>Elaborado por: Sergio A. Silva y Juliet Marianie Vásquez B.</p>
   </div>
+
+  <script>
+    const mensaje = document.getElementById('mensaje');
+    const contador = document.getElementById('contadorMensaje');
+    const limite = 500;
+
+    function actualizarContador() {
+      const total = mensaje.value.length;
+      contador.textContent = `${total} / ${limite} caracteres`;
+      contador.classList.toggle('limite', total >= limite);
+    }
+
+    mensaje.addEventListener('input', actualizarContador);
+    actualizarContador();
+  </script>
 
 </body>
 </html>

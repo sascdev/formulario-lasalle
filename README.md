@@ -14,6 +14,9 @@ Sitio web con página principal y formulario de contacto que permite a los usuar
 - `index.html` — Página principal
 - `contacto.php` — Formulario de contacto
 - `procesar.php` — Procesamiento y guardado en base de datos
+- `config.php` — Configuración de base de datos y contraseña de administración
+- `admin.php` — Panel para ver y eliminar mensajes guardados
+- `docs/DOCUMENTO-DE-REQUERIMIENTOS.pdf` — Documento de requerimientos del sistema
 
 ## Repositorio en GitHub
 Código fuente y historial de cambios: [github.com/sascdev/formulario-lasalle](https://github.com/sascdev/formulario-lasalle)
@@ -43,6 +46,11 @@ Capturas de pantalla del ambiente de desarrollo y pruebas disponibles en la carp
 4. Página principal de la aplicación
 5. Formulario de contacto
 6. Confirmación de mensaje enviado correctamente
+
+## Panel de administración (eliminar mensajes)
+1. Abre `admin.php` en el navegador (por ejemplo: `https://formulario-lasalle.infinityfreeapp.com/admin.php`).
+2. Ingresa la contraseña definida en `config.php` (`ADMIN_PASSWORD`, por defecto `lasalle2026`).
+3. En la tabla, usa el botón **Eliminar** del mensaje que quieras borrar (pide confirmación antes de borrar).
 
 ## Dominio público
 🌐 https://formulario-lasalle.infinityfreeapp.com

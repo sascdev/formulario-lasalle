@@ -1,5 +1,7 @@
 .DS_Store
 Thumbs.db
+repo_git/
+.git/
 *.log
 .idea/
 .vscode/

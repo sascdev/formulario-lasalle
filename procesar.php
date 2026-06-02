@@ -1,28 +1,37 @@
 <?php
+require_once 'config.php';
+
 // recibimos los datos que vienen del formulario
 $nombre   = isset($_POST['nombre']) ? trim($_POST['nombre']) : '';
 $email    = isset($_POST['email']) ? trim($_POST['email']) : '';
 $telefono = isset($_POST['telefono']) ? trim($_POST['telefono']) : '';
 $asunto   = isset($_POST['asunto']) ? trim($_POST['asunto']) : '';
 $mensaje  = isset($_POST['mensaje']) ? trim($_POST['mensaje']) : '';
+$resultado = false;
+$errorValidacion = '';
 
-// conectamos a la base de datos que creamos en XAMPP
-$conn = new mysqli("sql113.infinityfree.com", "if0_41434984", "5V7fHvzW1YMKE", "if0_41434984_lasalle");
-
-if ($conn->connect_error) {
-  die("Error de conexión: " . $conn->connect_error);
+if ($nombre === '' || $email === '' || $mensaje === '') {
+  $errorValidacion = 'Por favor completa todos los campos obligatorios.';
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $errorValidacion = 'El correo electrónico no es válido.';
+} elseif (mb_strlen($mensaje, 'UTF-8') > 500) {
+  $errorValidacion = 'El mensaje no puede superar los 500 caracteres.';
 }
 
-$conn->set_charset("utf8mb4");
+if ($errorValidacion === '') {
+  $conn = obtenerConexion();
 
-// guardamos los datos en la tabla contactos (consulta preparada)
-$stmt = $conn->prepare(
-  "INSERT INTO contactos (nombre, email, telefono, asunto, mensaje) VALUES (?, ?, ?, ?, ?)"
-);
-$stmt->bind_param("sssss", $nombre, $email, $telefono, $asunto, $mensaje);
-$resultado = $stmt->execute();
-$stmt->close();
-$conn->close();
+  // guardamos los datos en la tabla contactos (consulta preparada)
+  $stmt = $conn->prepare(
+    "INSERT INTO contactos (nombre, email, telefono, asunto, mensaje) VALUES (?, ?, ?, ?, ?)"
+  );
+  $stmt->bind_param("sssss", $nombre, $email, $telefono, $asunto, $mensaje);
+  $resultado = $stmt->execute();
+  $stmt->close();
+  $conn->close();
+}
+
+$nombreSeguro = htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -51,9 +60,12 @@ $conn->close();
 </head>
 <body>
   <div class="caja">
-    <?php if ($resultado): ?>
+    <?php if ($errorValidacion !== ''): ?>
+      <h2>Faltan datos por corregir</h2>
+      <p><?php echo htmlspecialchars($errorValidacion, ENT_QUOTES, 'UTF-8'); ?></p>
+    <?php elseif ($resultado): ?>
       <h2>Mensaje enviado correctamente</h2>
-      <p>Gracias <?php echo $nombre; ?>, te responderemos pronto.</p>
+      <p>Gracias <?php echo $nombreSeguro; ?>, te responderemos pronto.</p>
     <?php else: ?>
       <h2>Hubo un error</h2>
       <p>No se pudo guardar el mensaje.</p>
